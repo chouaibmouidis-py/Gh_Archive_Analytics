@@ -1,0 +1,12 @@
+name : gh_archive
+version: "1.0.0"
+profile: gh_archive
+
+model-paths: ["models"]
+
+models:
+  gh_archive:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: "GH Archive events, deduplicated, with flattened actor/repo/org fields"
+    columns:
+      - name: event_id
+        description: "Unique GitHub event identifier."
+        data_tests:
+          - not_null
+          - unique
+      - name: event_type
+        data_tests:
+          - not_null
+      - name: event_at
+        data_tests:
+          - not_null
