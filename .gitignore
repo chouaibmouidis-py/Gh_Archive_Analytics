@@ -9,3 +9,8 @@ wheels/
 # Virtual environments
 .venv
 data/
+.user.yml
+logs/
+target/
+dbt_packages/
+*.duckdb
