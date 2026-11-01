@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_repo
+    description: "One row per GitHub repository with activity summary."
+    columns:
+      - name: repo_id
+        data_tests:
+            - not_null
+            - unique
