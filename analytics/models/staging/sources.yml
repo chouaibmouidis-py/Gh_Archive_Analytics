@@ -1,8 +1,9 @@
-version : 2
+version: 2
 
 sources:
   - name: bronze
-    meta:
-      external_location: "read_parquet('../data/bronze/events/**/*.parquet', hive_partitioning=true)"
     tables:
       - name: events
+        config:
+          meta:
+            external_location: "read_parquet('../data/bronze/events/**/*.parquet', hive_partitioning=true)"
