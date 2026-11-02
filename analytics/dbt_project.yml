@@ -8,6 +8,8 @@ models:
   gh_archive:
     staging:
       +materialized: view
+    intermediate:
+      +materialized: table
     marts:
       +materialized: table
 flags:

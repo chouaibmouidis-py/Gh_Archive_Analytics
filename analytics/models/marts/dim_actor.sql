@@ -4,5 +4,5 @@ SELECT
     MIN(event_at)                   AS first_event_at,
     MAX(event_at)                   AS last_event_at,
     COUNT(*)                        AS event_count
-FROM {{ ref('stg_events') }}
+FROM {{ ref('int_events_deduplicated') }}
 GROUP BY actor_id
