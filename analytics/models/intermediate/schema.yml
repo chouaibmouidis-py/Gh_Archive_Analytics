@@ -1,24 +1,20 @@
 version: 2
 
 models:
-  - name: dim_repo
-    description: "One row per GitHub repository with activity summary."
-    columns:
-      - name: repo_id
-        data_tests:
-            - not_null
-            - unique
-  - name: dim_actor
-    description: "One row per GitHub user with activity summary."
-    columns:
-      - name: actor_id
-        data_tests:
-            - not_null
-            - unique
   - name: int_events_deduplicated
-    description: "One row per GitHub event (incremental)."
+    description: "Intermediate table with deduplicated GitHub events."
     columns:
       - name: event_id
         data_tests:
             - not_null
             - unique
+      - name: repo_id
+        data_tests:
+            - not_null
+      - name: actor_id
+        data_tests:
+            - not_null
+      - name: event_date
+        data_tests:
+            - not_null
+ 
