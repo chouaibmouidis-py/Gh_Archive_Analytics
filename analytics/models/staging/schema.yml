@@ -8,9 +8,13 @@ models:
         description: "GitHub event identifier. May repeat in the bronze layer."
         data_tests:
           - not_null
+          - unique:
+              config:
+                severity: warn
       - name: event_type
         data_tests:
           - not_null
       - name: event_at
         data_tests:
           - not_null
+
