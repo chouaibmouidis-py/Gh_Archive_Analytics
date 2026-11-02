@@ -2,13 +2,12 @@ version: 2
 
 models:
   - name: stg_events
-    description: "GH Archive events, deduplicated, with flattened actor/repo/org fields"
+    description: "GH Archive events with flattened actor/repo/org fields (not deduplicated; deduplication happens in fct_events)."
     columns:
       - name: event_id
-        description: "Unique GitHub event identifier."
+        description: "GitHub event identifier. May repeat in the bronze layer."
         data_tests:
           - not_null
-          - unique
       - name: event_type
         data_tests:
           - not_null
