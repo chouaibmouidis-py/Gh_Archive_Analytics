@@ -1,27 +1,17 @@
-version: 2
-
 models:
-  - name: dim_repo
-    description: "One row per GitHub repository with activity summary."
+  - name: int_events_deduplicated
+    description: "Deduplicated GH Archive events (one row per event_id)."
     columns:
-      - name: repo_id
+      - name: event_id
         data_tests:
-            - not_null
-            - unique
-  - name: dim_actor
-    description: "One row per GitHub user with activity summary."
-    columns:
-      - name: actor_id
-        data_tests:
-            - not_null
-            - unique
-  - name: fct_repo_daily_activity
-    description: "Daily activity summary for each GitHub repository."
-    columns:
-      - name: repo_id
-        data_tests:
-            - not_null
+          - not_null
+          - unique
       - name: event_date
         data_tests:
-            - not_null
-  
+          - not_null
+      - name: repo_id
+        data_tests:
+          - not_null
+      - name: actor_id
+        data_tests:
+          - not_null

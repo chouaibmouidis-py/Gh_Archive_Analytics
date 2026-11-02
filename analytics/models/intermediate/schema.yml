@@ -1,20 +1,22 @@
 version: 2
 
 models:
-  - name: int_events_deduplicated
-    description: "Intermediate table with deduplicated GitHub events."
+  - name: fct_repo_daily_activity
+    description: "Daily activity summary for each GitHub repository."
     columns:
-      - name: event_id
-        data_tests:
-            - not_null
-            - unique
       - name: repo_id
         data_tests:
-            - not_null
-      - name: actor_id
-        data_tests:
-            - not_null
+          - not_null
       - name: event_date
         data_tests:
-            - not_null
- 
+          - not_null
+
+  - name: fct_event_type_daily
+    description: "Daily event counts per event type."
+    columns:
+      - name: event_date
+        data_tests:
+          - not_null
+      - name: event_type
+        data_tests:
+          - not_null

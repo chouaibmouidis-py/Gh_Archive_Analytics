@@ -1,6 +1,4 @@
-SELECT 
-    mart_total,
-    int_total
+SELECT mart_total, int_total
 FROM (
     SELECT
         (SELECT SUM(total_events) FROM {{ ref('fct_repo_daily_activity') }}) AS mart_total,
