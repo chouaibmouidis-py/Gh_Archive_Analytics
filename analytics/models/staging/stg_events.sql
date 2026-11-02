@@ -1,19 +1,10 @@
-WITH source AS (
+{{
+    config(
+        materialized='ephemeral'
+    )
+}}
 
-    SELECT * FROM {{ source('bronze', 'events') }}
 
-),
-
-deduplicated AS (
-
-    SELECT *
-    FROM source
-    QUALIFY ROW_NUMBER() OVER (
-        PARTITION BY id
-        ORDER BY _ingested_at DESC
-    ) = 1
-
-)
 
 SELECT
     id                                      AS event_id,
@@ -27,7 +18,8 @@ SELECT
     json_extract(org, '$.id')::BIGINT       AS org_id,
     json_extract_string(org, '$.login')     AS org_login,
     public                                  AS is_public,
-    payload,
     _source_file,
-    _ingested_at
-FROM deduplicated
+    _ingested_at,
+    date                                    AS partition_date
+FROM {{ source('bronze', 'events') }}
+
