@@ -13,4 +13,4 @@ data/
 logs/
 target/
 dbt_packages/
-*.duckdb
+*.duckdb.DS_Store

@@ -7,7 +7,7 @@
 
 An end-to-end, high-throughput analytical platform processing **16.1M+ GitHub events** on local hardware with zero cloud cost, using Python, DuckDB, and dbt 2.0.
 
-> 📖 **Interactive Documentation & Lineage DAG:** [View dbt documentation](docs/index.html) *(or via GitHub Pages)*
+> 📖 **Interactive Documentation & Lineage DAG:** [View dbt documentation](https://chouaibmouidis-py.github.io/Gh_Archive_Analytics/) *(or via GitHub Pages)*
 
 ---
 
