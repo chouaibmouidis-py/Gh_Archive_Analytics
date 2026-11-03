@@ -1,21 +1,76 @@
+version: 2
+
 models:
-  - name: int_events_deduplicated
-    description: "Deduplicated GH Archive events (one row per event_id)."
+  - name: dim_repo
+    description: "One row per GitHub repository with lifetime activity summary."
     columns:
-      - name: event_id
-        description: "Unique identifier for the event."
+      - name: repo_id
+        description: "Unique GitHub repository identifier."
         data_tests:
           - not_null
           - unique
-      - name: event_date
-        description: "Date of the event."
+      - name: repo_name
+        description: "Latest known full name of the repository (owner/name)."
+      - name: first_event_at
+        description: "Timestamp of the earliest observed event for this repository."
+      - name: last_event_at
+        description: "Timestamp of the most recent observed event for this repository."
+      - name: event_count
+        description: "Total number of events observed for this repository."
+
+  - name: dim_actor
+    description: "One row per GitHub user with lifetime activity summary."
+    columns:
+      - name: actor_id
+        description: "Unique GitHub user identifier."
         data_tests:
           - not_null
+          - unique
+      - name: actor_login
+        description: "Latest known login handle/username of the actor."
+      - name: first_event_at
+        description: "Timestamp of the earliest observed event by this actor."
+      - name: last_event_at
+        description: "Timestamp of the most recent observed event by this actor."
+      - name: event_count
+        description: "Total number of events performed by this actor."
+
+  - name: fct_repo_daily_activity
+    description: "Daily activity summary for each GitHub repository."
+    columns:
       - name: repo_id
         description: "Unique identifier for the repository."
         data_tests:
           - not_null
-      - name: actor_id
-        description: "Unique identifier for the actor."
+      - name: event_date
+        description: "Date of the observed daily activity."
         data_tests:
           - not_null
+      - name: total_events
+        description: "Total number of events for the repository on the given day."
+      - name: push_events
+        description: "Number of code push events on the given day."
+      - name: watch_events
+        description: "Number of repository star/watch events on the given day."
+      - name: pull_request_events
+        description: "Number of pull request lifecycle events on the given day."
+      - name: unique_actor_count
+        description: "Number of distinct users active on the repository on the given day."
+
+  - name: fct_event_type_daily
+    description: "Daily activity summary grouped by event type."
+    columns:
+      - name: event_date
+        description: "Date of the events."
+        data_tests:
+          - not_null
+      - name: event_type
+        description: "GitHub event type (e.g. PushEvent, WatchEvent, IssuesEvent)."
+        data_tests:
+          - not_null
+      - name: total_events
+        description: "Total number of events of this type on the given day."
+      - name: unique_repo_count
+        description: "Number of distinct repositories touched by this event type on the given day."
+      - name: unique_actor_count
+        description: "Number of distinct users triggering this event type on the given day."
