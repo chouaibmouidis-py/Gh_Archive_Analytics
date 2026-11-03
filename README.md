@@ -3,11 +3,12 @@
 [![dbt 2.0](https://img.shields.io/badge/dbt-2.0.9%20(Fusion)-orange.svg)](https://docs.getdbt.com)
 [![DuckDB](https://img.shields.io/badge/DuckDB-2.0-yellow.svg)](https://duckdb.org)
 [![Python uv](https://img.shields.io/badge/managed%20by-uv-blue.svg)](https://github.com/astral-sh/uv)
-[![Docs](https://img.shields.io/badge/dbt%20Docs-GitHub%20Pages-brightgreen.svg)](docs/index.html)
+[![Docs](https://img.shields.io/badge/dbt%20Docs-GitHub%20Pages-brightgreen.svg)]([https://chouaibmouidis-py.github.io/Gh_Archive_Analytics/](https://chouaibmouidis-py.github.io/Gh_Archive_Analytics/))
 
-An end-to-end, high-throughput analytical platform processing **16.1M+ GitHub events** on local hardware with zero cloud cost, using Python, DuckDB, and dbt 2.0.
+An end-to-end, high-throughput analytical platform processing **16.1M+ GitHub events** on local hardware with zero cloud cost, using Python
+> 📖 **Interactive Documentation & Lineage DAG:** [View dbt documentation](https://chouaibmouidis-py.github.io/Gh_Archive_Analytics/) *(or via GitHub Pages)*, DuckDB, and dbt 2.0.
 
-> 📖 **Interactive Documentation & Lineage DAG:** [View dbt documentation](https://chouaibmouidis-py.github.io/Gh_Archive_Analytics/) *(or via GitHub Pages)*
+
 
 ---
 
