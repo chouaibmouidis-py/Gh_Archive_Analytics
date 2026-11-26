@@ -128,3 +128,14 @@ Gh_Archive_Analytics/
 📫 Contact & Liens
 - LinkedIn : [MOUID / Chouaib](https://www.linkedin.com/in/chouaib-mouid-200893438/)
 - GitHub : [Chouaib-mouid](https://github.com/chouaibmouidis-py)
+
+## Licence
+
+Copyright 2026 Chouaib MOUID. Original project code and original documentation
+are licensed under the [Apache License 2.0](LICENSE). See [NOTICE](NOTICE) for
+attribution and scope.
+
+GH Archive data and other third-party materials retain their own rights and
+usage terms. Generated dbt documentation and bundled frontend components under
+`docs/` retain their upstream licences and notices; they are not relicensed as
+original project code. No rights to third-party trademarks are granted.

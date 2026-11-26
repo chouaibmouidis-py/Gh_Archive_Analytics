@@ -1,0 +1,11 @@
+GH Archive Analytics
+Copyright 2026 Chouaib MOUID
+
+Original project code and original documentation are licensed under the
+Apache License, Version 2.0. See LICENSE for the full terms.
+
+GH Archive event data and other third-party materials retain their respective
+rights and usage terms. Generated dbt documentation and bundled frontend
+components under docs/ retain their upstream licences and attribution notices;
+this project does not relicense those components. GitHub and other trademarks
+remain the property of their respective owners.
